@@ -8,3 +8,6 @@ Content-Type: application/json
   "userid": 123123,
   "sum": 65
 }
+
+### בדיקת הפקת דוח
+GET http://localhost:3000/api/report?id=123123&year=2026&month=1
