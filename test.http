@@ -26,3 +26,5 @@ Content-Type: application/json
 ### בדיקה 2: קבלת פרטים על דוד (אמור להראות סך הוצאות 130)
 GET http://localhost:3000/api/users/123123
 
+###
+GET http://localhost:3000/api/logs
