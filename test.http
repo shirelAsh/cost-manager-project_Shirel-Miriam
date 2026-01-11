@@ -1,13 +1,31 @@
+### בדיקה 1: האם שרת האדמין עובד?
+GET http://localhost:3004/api/about
 
-POST http://localhost:3000/api/add
+### בדיקה 2: הוספת משתמש ראשון (שרת 3001)
+POST http://localhost:3001/api/addusers
 Content-Type: application/json
 
 {
-  "description": "Pizza with friends",
-  "category": "food",
-  "userid": 123123,
-  "sum": 65
+  "id": 123123,
+  "first_name": "Mosh",
+  "last_name": "Israeli",
+  "birthday": "1990-01-01"
 }
 
-### בדיקת הפקת דוח
-GET http://localhost:3000/api/report?id=123123&year=2026&month=1
+### בדיקה 3: הוספת הוצאה (שרת 3002)
+POST http://localhost:3002/api/add
+Content-Type: application/json
+
+{
+  "description": "Milk and Eggs",
+  "category": "food",
+  "userid": 123123,
+  "sum": 50,
+  "created_at": "2026-02-15"
+}
+
+### בדיקה 4: קבלת דוח חודשי (שרת 3002)
+GET http://localhost:3002/api/report?id=123123&year=2026&month=2
+
+### בדיקה 5: בדיקת לוגים (שרת 3003)
+GET http://localhost:3003/api/logs
