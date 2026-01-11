@@ -2,6 +2,7 @@ require('dotenv').config();
 const Report = require('./models/reports');
 const express = require('express');
 const mongoose = require('mongoose');
+const User = require('./models/users');
 // ייבוא המודל של ההוצאות שיצרת קודם
 const Cost = require('./models/costs');
 
@@ -121,6 +122,69 @@ app.get('/api/report', async (req, res) => {
     } catch (error) {
         console.error("Error generating report:", error);
         res.status(500).json({ error: "Failed to generate report", details: error.message });
+    }
+});
+// ---------------------------------------------------------
+// נקודת קצה 3: הוספת משתמש חדש
+// POST /api/addusers
+// ---------------------------------------------------------
+app.post('/api/addusers', async (req, res) => {
+    try {
+        const { id, first_name, last_name, birthday } = req.body;
+
+        // בדיקה שכל השדות קיימים
+        if (!id || !first_name || !last_name || !birthday) {
+            return res.status(400).json({ error: "Missing required fields" });
+        }
+
+        const newUser = new User({
+            id,
+            first_name,
+            last_name,
+            birthday: new Date(birthday)
+        });
+
+        const savedUser = await newUser.save();
+        res.status(201).json(savedUser);
+
+    } catch (error) {
+        if (error.code === 11000) {
+            return res.status(400).json({ error: "User ID already exists" });
+        }
+        res.status(500).json({ error: "Failed to add user", details: error.message });
+    }
+});
+
+// ---------------------------------------------------------
+// נקודת קצה 4: קבלת פרטי משתמש + סך כל ההוצאות
+// GET /api/users/:id
+// ---------------------------------------------------------
+app.get('/api/users/:id', async (req, res) => {
+    try {
+        const userId = parseInt(req.params.id);
+
+        // 1. שליפת המשתמש
+        const user = await User.findOne({ id: userId });
+        if (!user) {
+            return res.status(404).json({ error: "User not found" });
+        }
+
+        // 2. חישוב סך ההוצאות שלו (בונוס)
+        const costs = await Cost.find({ userid: userId });
+        let totalCost = 0;
+        costs.forEach(c => totalCost += c.sum);
+
+        // 3. החזרת התשובה
+        res.json({
+            first_name: user.first_name,
+            last_name: user.last_name,
+            id: user.id,
+            birthday: user.birthday,
+            total_costs: totalCost
+        });
+
+    } catch (error) {
+        res.status(500).json({ error: "Failed to get user details", details: error.message });
     }
 });
 app.listen(PORT, () => {

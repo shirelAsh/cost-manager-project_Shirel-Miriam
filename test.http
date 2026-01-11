@@ -11,3 +11,18 @@ Content-Type: application/json
 
 ### בדיקת הפקת דוח
 GET http://localhost:3000/api/report?id=123123&year=2026&month=1
+
+### בדיקה 1: הוספת המשתמש דוד
+POST http://localhost:3000/api/addusers
+Content-Type: application/json
+
+{
+  "id": 123123,
+  "first_name": "David",
+  "last_name": "Cohen",
+  "birthday": "1990-01-01"
+}
+
+### בדיקה 2: קבלת פרטים על דוד (אמור להראות סך הוצאות 130)
+GET http://localhost:3000/api/users/123123
+
