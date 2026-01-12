@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "6963f64a30f23049d20eee1d",
+    "id": 123123,
+    "first_name": "David",
+    "last_name": "Cohen",
+    "birthday": "1990-01-01T00:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "6964d6c91dbc33dfa693f91c",
+    "id": 99999,
+    "first_name": "Mosh",
+    "last_name": "Israeli",
+    "birthday": "1990-01-01T00:00:00.000Z",
+    "__v": 0
+  }
+]

@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="315911aa-596f-4a97-91fe-c81323b4e1d1" name="Changes" comment="Added 4 microservices">
-      <change beforePath="$PROJECT_DIR$/admin-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin-service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/costs-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/costs-service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/logs-service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/costs.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/costs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/logs.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/logs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/reports.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/reports.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.http" beforeDir="false" afterPath="$PROJECT_DIR$/test.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/users-service.js" afterDir="false" />
     </list>
@@ -60,6 +55,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "HTTP Request.test | CHECK 1: Get Specific User Details (PDF Req: Page 5).executor": "Run",
     "HTTP Request.test | Test 1: Check Admin Service Health (Port 3004).executor": "Run",
     "HTTP Request.test | Test 2: Create New User (Port 3001).executor": "Run",
     "HTTP Request.test | Test 3: Add Cost Item (Port 3002).executor": "Run",
@@ -92,7 +88,7 @@
         <entry key="HttpClient.HttpRequestRunConfigurationType">
           <value>
             <map>
-              <entry key="test | Test 1: Check Admin Service Health (Port 3004)" value="STOPPED" />
+              <entry key="test | CHECK 1: Get Specific User Details (PDF Req: Page 5)" value="STOPPED" />
               <entry key="test | Test 2: Create New User (Port 3001)" value="STOPPED" />
               <entry key="test | Test 3: Add Cost Item (Port 3002)" value="STOPPED" />
               <entry key="test | Test 4: Generate Monthly Report (Port 3002)" value="STOPPED" />
@@ -103,8 +99,11 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.test | Test 2: Create New User (Port 3001)">
-    <configuration name="test | Test 1: Check Admin Service Health (Port 3004)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="Test 1: Check Admin Service Health (Port 3004)" runType="Run single request">
+  <component name="RunManager" selected="HTTP Request.test | CHECK 2: List All Users (PDF Req: Page 6)">
+    <configuration name="test | CHECK 1: Get Specific User Details (PDF Req: Page 5)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="CHECK 1: Get Specific User Details (PDF Req: Page 5)" index="6" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="test | CHECK 2: List All Users (PDF Req: Page 6)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="CHECK 2: List All Users (PDF Req: Page 6)" index="7" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="test | Test 2: Create New User (Port 3001)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="Test 2: Create New User (Port 3001)" index="2" runType="Run single request">
@@ -113,19 +112,16 @@
     <configuration name="test | Test 3: Add Cost Item (Port 3002)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="Test 3: Add Cost Item (Port 3002)" index="3" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="test | Test 4: Generate Monthly Report (Port 3002)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="Test 4: Generate Monthly Report (Port 3002)" index="4" runType="Run single request">
-      <method v="2" />
-    </configuration>
     <configuration name="test | Test 5: Fetch System Logs (Port 3003)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="Test 5: Fetch System Logs (Port 3003)" index="5" runType="Run single request">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.test | CHECK 2: List All Users (PDF Req: Page 6)" />
+        <item itemvalue="HTTP Request.test | CHECK 1: Get Specific User Details (PDF Req: Page 5)" />
+        <item itemvalue="HTTP Request.test | Test 3: Add Cost Item (Port 3002)" />
         <item itemvalue="HTTP Request.test | Test 2: Create New User (Port 3001)" />
         <item itemvalue="HTTP Request.test | Test 5: Fetch System Logs (Port 3003)" />
-        <item itemvalue="HTTP Request.test | Test 4: Generate Monthly Report (Port 3002)" />
-        <item itemvalue="HTTP Request.test | Test 3: Add Cost Item (Port 3002)" />
-        <item itemvalue="HTTP Request.test | Test 1: Check Admin Service Health (Port 3004)" />
       </list>
     </recent_temporary>
   </component>
@@ -143,7 +139,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1768161424776</updated>
-      <workItem from="1768161426311" duration="9522000" />
+      <workItem from="1768161426311" duration="12351000" />
     </task>
     <task id="LOCAL‎-00001" summary="Added 4 microservices">
       <option name="closed" value="true" />

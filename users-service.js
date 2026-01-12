@@ -71,7 +71,7 @@ app.get('/api/users/:id', async (req, res) => {
             first_name: user.first_name,
             last_name: user.last_name,
             id: user.id,
-            total_costs: totalCost
+            total: totalCost
         });
     } catch (error) {
         res.status(500).json({ error: error.message });

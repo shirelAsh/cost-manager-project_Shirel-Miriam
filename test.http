@@ -29,3 +29,15 @@ GET http://127.0.0.1:3002/api/report?id=123123&year=2026&month=2
 
 ### Test 5: Fetch System Logs (Port 3003)
 GET http://127.0.0.1:3003/api/logs
+
+### CHECK 1: Get Specific User Details (PDF Req: Page 5)
+# This should return user details AND total costs.
+GET http://127.0.0.1:3001/api/users/123123
+
+### CHECK 2: List All Users (PDF Req: Page 6)
+# This should return a list of all users.
+GET http://127.0.0.1:3001/api/users
+
+### CHECK 3: Check Logs (Is it Pino?)
+# Just checking if logs are returned.
+GET http://127.0.0.1:3003/api/logs
