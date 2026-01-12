@@ -1,0 +1,13 @@
+{
+  "food": [
+    {
+      "day": 15,
+      "description": "Milk and Eggs",
+      "sum": 50
+    }
+  ],
+  "health": [],
+  "housing": [],
+  "sports": [],
+  "education": []
+}

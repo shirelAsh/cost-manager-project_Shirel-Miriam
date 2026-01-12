@@ -9,9 +9,10 @@ const PORT = 3004;
 
 const logger = pino({ level: 'info', transport: { target: 'pino-pretty' } });
 
-// חיבור לדאטה בייס רק בשביל לשמור לוגים של האדמין
+// Database connection is mainly for logging purposes in this service
 mongoose.connect(process.env.MONGO_URI);
 
+// --- Middleware: Logging ---
 app.use(async (req, res, next) => {
     const msg = `[Admin Service] ${req.method} ${req.originalUrl}`;
     logger.info(msg);
@@ -19,6 +20,11 @@ app.use(async (req, res, next) => {
     next();
 });
 
+/**
+ * Endpoint: GET /api/about
+ * Purpose: Returns the team members' details.
+ * Note: This returns static data as per project requirements.
+ */
 app.get('/api/about', (req, res) => {
     const team = [
         { first_name: "Shirel", last_name: "Ashtamker" },

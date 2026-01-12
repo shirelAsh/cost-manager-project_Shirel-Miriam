@@ -1,0 +1,107 @@
+[
+  {
+    "_id": "69640b092b04f5a0defd5d19",
+    "level": "info",
+    "message": "New Request: GET /api/logs",
+    "timestamp": "2026-01-11T20:41:45.289Z",
+    "__v": 0
+  },
+  {
+    "_id": "69640b1b2b04f5a0defd5d1c",
+    "level": "info",
+    "message": "New Request: GET /api/logs",
+    "timestamp": "2026-01-11T20:42:03.117Z",
+    "__v": 0
+  },
+  {
+    "_id": "696414a1f95084d77ca035e7",
+    "level": "info",
+    "message": "[Admin Service] GET /api/about",
+    "timestamp": "2026-01-11T21:22:41.343Z",
+    "__v": 0
+  },
+  {
+    "_id": "696414a1f95084d77ca035e9",
+    "level": "info",
+    "message": "[Admin Service] GET /favicon.ico",
+    "timestamp": "2026-01-11T21:22:41.530Z",
+    "__v": 0
+  },
+  {
+    "_id": "696415b9f95084d77ca035eb",
+    "level": "info",
+    "message": "[Admin Service] GET /api/about",
+    "timestamp": "2026-01-11T21:27:21.709Z",
+    "__v": 0
+  },
+  {
+    "_id": "696415c30cdf4c463e427fe9",
+    "level": "info",
+    "message": "[Users Service] POST /api/addusers",
+    "timestamp": "2026-01-11T21:27:31.747Z",
+    "__v": 0
+  },
+  {
+    "_id": "69641621fa82402aa42ced6b",
+    "level": "info",
+    "message": "[Costs Service] POST /api/add",
+    "timestamp": "2026-01-11T21:29:05.007Z",
+    "__v": 0
+  },
+  {
+    "_id": "69641685fa82402aa42ced6f",
+    "level": "info",
+    "message": "[Costs Service] GET /api/report?id=123123&year=2026&month=2",
+    "timestamp": "2026-01-11T21:30:45.359Z",
+    "__v": 0
+  },
+  {
+    "_id": "69641a8bf95084d77ca035ed",
+    "level": "info",
+    "message": "[Admin Service] GET /api/about",
+    "timestamp": "2026-01-11T21:47:55.532Z",
+    "__v": 0
+  },
+  {
+    "_id": "6964d3b474aa9c26e88c5fa3",
+    "level": "info",
+    "message": "[Admin Service] GET /api/about",
+    "timestamp": "2026-01-12T10:57:56.938Z",
+    "__v": 0
+  },
+  {
+    "_id": "6964d47874aa9c26e88c5fa5",
+    "level": "info",
+    "message": "[Admin Service] GET /api/about",
+    "timestamp": "2026-01-12T11:01:12.770Z",
+    "__v": 0
+  },
+  {
+    "_id": "6964d5dbd0c075a511744a42",
+    "level": "info",
+    "message": "[Admin Service] GET /api/about",
+    "timestamp": "2026-01-12T11:07:07.591Z",
+    "__v": 0
+  },
+  {
+    "_id": "6964d5e71dbc33dfa693f916",
+    "level": "info",
+    "message": "[Users Service] POST /api/addusers",
+    "timestamp": "2026-01-12T11:07:19.114Z",
+    "__v": 0
+  },
+  {
+    "_id": "6964d5fb5fe991093801b9e0",
+    "level": "info",
+    "message": "[Costs Service] POST /api/add",
+    "timestamp": "2026-01-12T11:07:39.435Z",
+    "__v": 0
+  },
+  {
+    "_id": "6964d66b5fe991093801b9e4",
+    "level": "info",
+    "message": "[Costs Service] GET /api/report?id=123123&year=2026&month=2",
+    "timestamp": "2026-01-12T11:09:31.744Z",
+    "__v": 0
+  }
+]

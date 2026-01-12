@@ -1,14 +1,15 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// מבנה של שורה בודדת בדוח (יום, תיאור וסכום)
+// Schema for a single report item (day, description, and sum)
 const reportItemSchema = new Schema({
     day: Number,
     description: String,
     sum: Number
-}, { _id: false }); // לא צריך ID לכל שורה קטנה
+}, { _id: false }); // Disable _id for sub-documents to keep the document clean
 
-// המבנה הראשי של הדוח החודשי
+// Main schema for storing monthly reports
+// This acts as a cache for the 'Computed Pattern' to avoid repeated calculations
 const reportSchema = new Schema({
     userid: {
         type: Number,
@@ -23,6 +24,7 @@ const reportSchema = new Schema({
         required: true
     },
     costs: {
+        // Costs are grouped by category
         food: [reportItemSchema],
         health: [reportItemSchema],
         housing: [reportItemSchema],

@@ -1,0 +1,164 @@
+POST http://127.0.0.1:3001/api/addusers
+Content-Type: application/json
+Content-Length: 95
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": 99999,
+  "first_name": "Mosh",
+  "last_name": "Israeli",
+  "birthday": "1990-01-01"
+}
+
+<> 2026-01-12T131105.201.json
+
+###
+
+GET http://127.0.0.1:3003/api/logs
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-01-12T130937.200.json
+
+###
+
+GET http://127.0.0.1:3002/api/report?id=123123&year=2026&month=2
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-01-12T130932.200.json
+
+###
+
+POST http://127.0.0.1:3002/api/add
+Content-Type: application/json
+Content-Length: 121
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "description": "Milk and Eggs",
+  "category": "food",
+  "userid": 123123,
+  "sum": 50,
+  "created_at": "2026-02-15"
+}
+
+<> 2026-01-12T130739.201.json
+
+###
+
+POST http://127.0.0.1:3001/api/addusers
+Content-Type: application/json
+Content-Length: 96
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": 123123,
+  "first_name": "Mosh",
+  "last_name": "Israeli",
+  "birthday": "1990-01-01"
+}
+
+<> 2026-01-12T130719.500.json
+
+###
+
+GET http://127.0.0.1:3004/api/about
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-01-12T130707.200.json
+
+###
+
+GET http://127.0.0.1:3004/api/about
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-01-12T130112.200.json
+
+###
+
+GET http://localhost:3004/api/about
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-01-12T125757.200.json
+
+###
+
+GET http://localhost:3003/api/logs
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-01-11T233154.200.json
+
+###
+
+GET http://localhost:3002/api/report?id=123123&year=2026&month=2
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-01-11T233045.200.json
+
+###
+
+POST http://localhost:3002/api/add
+Content-Type: application/json
+Content-Length: 121
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "description": "Milk and Eggs",
+  "category": "food",
+  "userid": 123123,
+  "sum": 50,
+  "created_at": "2026-02-15"
+}
+
+<> 2026-01-11T232905.201.json
+
+###
+
+POST http://localhost:3001/api/addusers
+Content-Type: application/json
+Content-Length: 96
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": 123123,
+  "first_name": "Mosh",
+  "last_name": "Israeli",
+  "birthday": "1990-01-01"
+}
+
+<> 2026-01-11T232732.500.json
+
+###
+
+GET http://localhost:3004/api/about
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.2.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-01-11T232721.200.json
+
+###
+

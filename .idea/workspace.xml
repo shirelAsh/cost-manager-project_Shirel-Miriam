@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="315911aa-596f-4a97-91fe-c81323b4e1d1" name="Changes" comment="Added 4 microservices">
+      <change beforePath="$PROJECT_DIR$/admin-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/costs-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/costs-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/logs-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/costs.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/costs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/logs.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/logs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/reports.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/reports.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.http" beforeDir="false" afterPath="$PROJECT_DIR$/test.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/users-service.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;miriambd1&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/shirelAsh/cost-manager-project_Shirel-Miriam.git&quot;,
+    &quot;accountId&quot;: &quot;ac2decb2-0a6d-4472-ba04-55ae31b0c325&quot;
+  }
+}</component>
+  <component name="HttpClientOnboardingState"><![CDATA[{
+  "isOnboardingCommentShown": true
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="387rPK0G8xGouZX9fxYHMzIQI6N" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "HTTP Request.test | Test 1: Check Admin Service Health (Port 3004).executor": "Run",
+    "HTTP Request.test | Test 2: Create New User (Port 3001).executor": "Run",
+    "HTTP Request.test | Test 3: Add Cost Item (Port 3002).executor": "Run",
+    "HTTP Request.test | Test 4: Generate Monthly Report (Port 3002).executor": "Run",
+    "HTTP Request.test | Test 5: Fetch System Logs (Port 3003).executor": "Run",
+    "HTTP Request.test | בדיקה 1: האם שרת האדמין עובד?.executor": "Run",
+    "HTTP Request.test | בדיקה 2: הוספת משתמש ראשון (שרת 3001).executor": "Run",
+    "HTTP Request.test | בדיקה 3: הוספת הוצאה (שרת 3002).executor": "Run",
+    "HTTP Request.test | בדיקה 4: קבלת דוח חודשי (שרת 3002).executor": "Run",
+    "HTTP Request.test | בדיקה 5: בדיקת לוגים (שרת 3003).executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunDashboard">
+    <option name="configurationStatuses">
+      <map>
+        <entry key="HttpClient.HttpRequestRunConfigurationType">
+          <value>
+            <map>
+              <entry key="test | Test 1: Check Admin Service Health (Port 3004)" value="STOPPED" />
+              <entry key="test | Test 2: Create New User (Port 3001)" value="STOPPED" />
+              <entry key="test | Test 3: Add Cost Item (Port 3002)" value="STOPPED" />
+              <entry key="test | Test 4: Generate Monthly Report (Port 3002)" value="STOPPED" />
+              <entry key="test | Test 5: Fetch System Logs (Port 3003)" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="RunManager" selected="HTTP Request.test | Test 2: Create New User (Port 3001)">
+    <configuration name="test | Test 1: Check Admin Service Health (Port 3004)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="Test 1: Check Admin Service Health (Port 3004)" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="test | Test 2: Create New User (Port 3001)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="Test 2: Create New User (Port 3001)" index="2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="test | Test 3: Add Cost Item (Port 3002)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="Test 3: Add Cost Item (Port 3002)" index="3" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="test | Test 4: Generate Monthly Report (Port 3002)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="Test 4: Generate Monthly Report (Port 3002)" index="4" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="test | Test 5: Fetch System Logs (Port 3003)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="Test 5: Fetch System Logs (Port 3003)" index="5" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.test | Test 2: Create New User (Port 3001)" />
+        <item itemvalue="HTTP Request.test | Test 5: Fetch System Logs (Port 3003)" />
+        <item itemvalue="HTTP Request.test | Test 4: Generate Monthly Report (Port 3002)" />
+        <item itemvalue="HTTP Request.test | Test 3: Add Cost Item (Port 3002)" />
+        <item itemvalue="HTTP Request.test | Test 1: Check Admin Service Health (Port 3004)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.27397.92" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="315911aa-596f-4a97-91fe-c81323b4e1d1" name="Changes" comment="" />
+      <created>1768161424776</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1768161424776</updated>
+      <workItem from="1768161426311" duration="9522000" />
+    </task>
+    <task id="LOCAL‎-00001" summary="Added 4 microservices">
+      <option name="closed" value="true" />
+      <created>1768167411845</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL‎-00001" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1768167411845</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added 4 microservices" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added 4 microservices" />
+  </component>
+</project>
