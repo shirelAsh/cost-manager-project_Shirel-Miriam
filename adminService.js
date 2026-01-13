@@ -5,8 +5,7 @@ require('dotenv').config();
 const Log = require('./models/logs');
 
 const app = express();
-const PORT = process.env.PORT_ADMIN || 3004;
-
+const PORT = process.env.PORT || process.env.PORT_ADMIN || 3004;
 const logger = pino({ level: 'info', transport: { target: 'pino-pretty' } });
 
 // Database connection is mainly for logging purposes in this service

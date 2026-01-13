@@ -9,8 +9,7 @@ const Report = require('./models/reports'); // Required for the 'Computed Patter
 const Log = require('./models/logs');       // Required for saving audit logs
 
 const app = express();
-const PORT = process.env.PORT_COSTS || 3002;
-
+const PORT = process.env.PORT || process.env.PORT_COSTS || 3002;
 // Initialize logger with pretty printing for better readability during development
 const logger = pino({ level: 'info', transport: { target: 'pino-pretty' } });
 
@@ -76,7 +75,9 @@ app.post('/api/add', async (req, res) => {
  */
 app.get('/api/report', async (req, res) => {
     try {
-        const { id, year, month } = req.query;
+        const id = parseInt(req.query.id);
+        const year = parseInt(req.query.year);
+        const month = parseInt(req.query.month);
 
         // --- Step 1: Check Cache (Optimization) ---
         const existingReport = await Report.findOne({ userid: id, year, month });
@@ -117,7 +118,7 @@ app.get('/api/report', async (req, res) => {
 
         // Save to database only if the year is less than the current year,
 // or if the year is the same but the month is less than the current month.
-        if (year < currentYear || (year == currentYear && month < currentMonth)) {
+        if (year < currentYear || (year === currentYear && month < currentMonth)) {
             await new Report({ userid: id, year, month, costs: reportData }).save();
         }
         res.json(reportData);

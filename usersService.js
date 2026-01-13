@@ -9,8 +9,7 @@ const Cost = require('./models/costs'); // Required to calculate total costs for
 const Log = require('./models/logs');   // Required for saving audit logs
 
 const app = express();
-const PORT = process.env.PORT_USERS || 3001;
-
+const PORT = process.env.PORT || process.env.PORT_USERS || 3001;
 const logger = pino({ level: 'info', transport: { target: 'pino-pretty' } });
 app.use(express.json());
 

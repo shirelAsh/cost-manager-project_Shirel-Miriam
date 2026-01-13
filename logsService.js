@@ -6,8 +6,7 @@ const Log = require('./models/logs');
 
 const app = express();
 // Set port from environment variables or default to 3003
-const PORT = process.env.PORT_LOGS || 3003;
-
+const PORT = process.env.PORT || process.env.PORT_LOGS || 3003;
 // Initialize logger configuration
 const logger = pino({ level: 'info', transport: { target: 'pino-pretty' } });
 
