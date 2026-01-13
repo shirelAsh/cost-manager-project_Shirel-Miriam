@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="315911aa-596f-4a97-91fe-c81323b4e1d1" name="Changes" comment="Added 4 microservices">
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unitTests.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.http" beforeDir="false" afterPath="$PROJECT_DIR$/test.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/users-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/adminService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/costs-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/costsService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/logsService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/usersService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +60,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "HTTP Request.test | CHECK 1: Get Specific User Details (PDF Req: Page 5).executor": "Run",
+    "HTTP Request.test | CHECK 2: List All Users (PDF Req: Page 6).executor": "Run",
     "HTTP Request.test | Test 1: Check Admin Service Health (Port 3004).executor": "Run",
     "HTTP Request.test | Test 2: Create New User (Port 3001).executor": "Run",
     "HTTP Request.test | Test 3: Add Cost Item (Port 3002).executor": "Run",
@@ -89,9 +94,9 @@
           <value>
             <map>
               <entry key="test | CHECK 1: Get Specific User Details (PDF Req: Page 5)" value="STOPPED" />
+              <entry key="test | CHECK 2: List All Users (PDF Req: Page 6)" value="STOPPED" />
               <entry key="test | Test 2: Create New User (Port 3001)" value="STOPPED" />
               <entry key="test | Test 3: Add Cost Item (Port 3002)" value="STOPPED" />
-              <entry key="test | Test 4: Generate Monthly Report (Port 3002)" value="STOPPED" />
               <entry key="test | Test 5: Fetch System Logs (Port 3003)" value="STOPPED" />
             </map>
           </value>
@@ -139,7 +144,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1768161424776</updated>
-      <workItem from="1768161426311" duration="12351000" />
+      <workItem from="1768161426311" duration="15702000" />
     </task>
     <task id="LOCAL‎-00001" summary="Added 4 microservices">
       <option name="closed" value="true" />
