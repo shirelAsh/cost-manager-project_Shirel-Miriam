@@ -9,7 +9,7 @@ const Report = require('./models/reports'); // Required for the 'Computed Patter
 const Log = require('./models/logs');       // Required for saving audit logs
 
 const app = express();
-const PORT = 3002;
+const PORT = process.env.PORT_COSTS || 3002;
 
 // Initialize logger with pretty printing for better readability during development
 const logger = pino({ level: 'info', transport: { target: 'pino-pretty' } });
@@ -60,7 +60,7 @@ app.post('/api/add', async (req, res) => {
         await newCost.save();
         res.status(201).json(newCost);
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        res.status(500).json({ id: 1, message: error.message });
     }
 });
 
@@ -110,12 +110,19 @@ app.get('/api/report', async (req, res) => {
             }
         });
 
-        // --- Step 3: Save to Cache ---
-        await new Report({ userid: id, year, month, costs: reportData }).save();
+        // --- Step 3: Save to Cache (Only if the month has passed) ---
+        const currentDate = new Date();
+        const currentYear = currentDate.getFullYear();
+        const currentMonth = currentDate.getMonth() + 1; // 1-12
 
+        // Save to database only if the year is less than the current year,
+// or if the year is the same but the month is less than the current month.
+        if (year < currentYear || (year == currentYear && month < currentMonth)) {
+            await new Report({ userid: id, year, month, costs: reportData }).save();
+        }
         res.json(reportData);
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        res.status(500).json({ id: 1, message: error.message });
     }
 });
 

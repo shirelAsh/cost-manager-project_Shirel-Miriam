@@ -9,7 +9,7 @@ const Cost = require('./models/costs'); // Required to calculate total costs for
 const Log = require('./models/logs');   // Required for saving audit logs
 
 const app = express();
-const PORT = 3001; // Unique port for the Users Service
+const PORT = process.env.PORT_USERS || 3001;
 
 const logger = pino({ level: 'info', transport: { target: 'pino-pretty' } });
 app.use(express.json());
@@ -29,10 +29,10 @@ mongoose.connect(process.env.MONGO_URI).then(() => console.log("✅ Users DB Con
 // --- Endpoints ---
 
 /**
- * Endpoint: POST /api/addusers
+ * Endpoint: POST /api/add
  * Purpose: Registers a new user in the system.
  */
-app.post('/api/addusers', async (req, res) => {
+app.post('/api/add', async (req, res) => {
     try {
         const { id, first_name, last_name, birthday } = req.body;
 
@@ -42,7 +42,7 @@ app.post('/api/addusers', async (req, res) => {
         await newUser.save();
         res.status(201).json(newUser);
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        res.status(500).json({ id: 1, message: error.message });
     }
 });
 
@@ -74,7 +74,7 @@ app.get('/api/users/:id', async (req, res) => {
             total: totalCost
         });
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        res.status(500).json({ id: 1, message: error.message });
     }
 });
 

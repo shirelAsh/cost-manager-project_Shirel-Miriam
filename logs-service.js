@@ -1,31 +1,43 @@
 const express = require('express');
 const mongoose = require('mongoose');
-require('dotenv').config(); // Load environment variables from .env file
-const Log = require('./models/logs'); // Import the Log model to access the logs collection
+const pino = require('pino'); // <--- הנה השורה שהייתה חסרה לך!
+require('dotenv').config();
+const Log = require('./models/logs');
 
 const app = express();
-const PORT = 3003; // Unique port for the Logs Microservice
+// שימוש בפורט מה-env או ברירת מחדל 3003
+const PORT = process.env.PORT_LOGS || 3003;
 
-// Connect to the shared MongoDB database
+// הגדרת הלוגר
+const logger = pino({ level: 'info', transport: { target: 'pino-pretty' } });
+
+// --- חיבור למסד הנתונים ---
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("✅ Logs DB Connected"))
     .catch(err => console.error("❌ DB Connection Error:", err));
 
+// --- Middleware: תיעוד בקשות ---
+// חובה להוסיף את זה כדי שגם פניות לשירות הלוגים יתועדו
+app.use(async (req, res, next) => {
+    const msg = `[Logs Service] ${req.method} ${req.originalUrl}`;
+    logger.info(msg);
+    try {
+        await new Log({ level: 'info', message: msg }).save();
+    } catch (e) {
+        console.error("Failed to save log to DB", e);
+    }
+    next();
+});
+
 // --- Endpoints ---
 
-/**
- * Endpoint: GET /api/logs
- * Purpose: Retrieves the entire audit trail of the system.
- * Usage: This endpoint is primarily for administrators to monitor system activity
- * and debug issues by viewing the history of requests recorded by other services.
- */
 app.get('/api/logs', async (req, res) => {
     try {
-        // Fetch all documents from the 'logs' collection
         const logs = await Log.find({});
         res.json(logs);
     } catch (error) {
-        res.status(500).json({ error: "Failed to fetch logs" });
+        // החזרת שגיאה בפורמט התקין
+        res.status(500).json({ id: 1, message: "Failed to fetch logs" });
     }
 });
 
