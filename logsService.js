@@ -1,23 +1,23 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const pino = require('pino'); // <--- הנה השורה שהייתה חסרה לך!
+const pino = require('pino'); // Import Pino logger
 require('dotenv').config();
 const Log = require('./models/logs');
 
 const app = express();
-// שימוש בפורט מה-env או ברירת מחדל 3003
+// Set port from environment variables or default to 3003
 const PORT = process.env.PORT_LOGS || 3003;
 
-// הגדרת הלוגר
+// Initialize logger configuration
 const logger = pino({ level: 'info', transport: { target: 'pino-pretty' } });
 
-// --- חיבור למסד הנתונים ---
+// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("✅ Logs DB Connected"))
     .catch(err => console.error("❌ DB Connection Error:", err));
 
-// --- Middleware: תיעוד בקשות ---
-// חובה להוסיף את זה כדי שגם פניות לשירות הלוגים יתועדו
+// Middleware: Request Logging
+// Log every incoming request to the database
 app.use(async (req, res, next) => {
     const msg = `[Logs Service] ${req.method} ${req.originalUrl}`;
     logger.info(msg);
@@ -36,7 +36,7 @@ app.get('/api/logs', async (req, res) => {
         const logs = await Log.find({});
         res.json(logs);
     } catch (error) {
-        // החזרת שגיאה בפורמט התקין
+        // Return error response with ID and message
         res.status(500).json({ id: 1, message: "Failed to fetch logs" });
     }
 });
