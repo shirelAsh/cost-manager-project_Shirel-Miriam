@@ -26,7 +26,7 @@ async function runTests() {
         // ---------------------------------------------------------
         // TEST 2: Create New User
         // ---------------------------------------------------------
-        console.log("\n2. Testing Create User (POST /api/addusers)...");
+        console.log("\n2. Testing Create User (POST /api/add)...");
         const randomId = Math.floor(Math.random() * 100000) + 200000;
 
         try {
