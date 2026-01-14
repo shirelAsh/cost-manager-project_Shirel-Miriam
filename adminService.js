@@ -8,10 +8,10 @@ const app = express();
 const PORT = process.env.PORT || process.env.PORT_ADMIN || 3004;
 const logger = pino({ level: 'info', transport: { target: 'pino-pretty' } });
 
-// Database connection is mainly for logging purposes in this service
+// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI);
 
-// --- Middleware: Logging ---
+// Request logging middleware
 app.use(async (req, res, next) => {
     const msg = `[Admin Service] ${req.method} ${req.originalUrl}`;
     logger.info(msg);
@@ -19,11 +19,7 @@ app.use(async (req, res, next) => {
     next();
 });
 
-/**
- * Endpoint: GET /api/about
- * Purpose: Returns the team members' details.
- * Note: This returns static data as per project requirements.
- */
+// GET /api/about - Return team members details
 app.get('/api/about', (req, res) => {
     const team = [
         { first_name: "Shirel", last_name: "Ashtamker" },

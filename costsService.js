@@ -3,50 +3,33 @@ const mongoose = require('mongoose');
 const pino = require('pino');
 require('dotenv').config();
 
-// Importing Mongoose models
+// Import models
 const Cost = require('./models/costs');
-const Report = require('./models/reports'); // Required for the 'Computed Pattern' (caching reports)
-const Log = require('./models/logs');       // Required for saving audit logs
+const Report = require('./models/reports');
+const Log = require('./models/logs');
 
 const app = express();
 const PORT = process.env.PORT || process.env.PORT_COSTS || 3002;
-// Initialize logger with pretty printing for better readability during development
 const logger = pino({ level: 'info', transport: { target: 'pino-pretty' } });
 
 app.use(express.json());
 
-/**
- * Middleware: Request Logging
- * ---------------------------
- * Intercepts every incoming request to the Costs Service.
- * 1. Logs the HTTP method and URL to the console (via Pino).
- * 2. Persists the log entry to the MongoDB 'logs' collection for audit purposes.
- */
+// Request logging middleware
 app.use(async (req, res, next) => {
     const msg = `[Costs Service] ${req.method} ${req.originalUrl}`;
     logger.info(msg);
-    try {
-        // Save log asynchronously to database
-        await new Log({ level: 'info', message: msg }).save();
-    } catch (e) {
-        console.error("Failed to save log to DB", e);
-    }
+    try { await new Log({ level: 'info', message: msg }).save(); } catch (e) {}
     next();
 });
 
-// Connect to MongoDB Atlas
+// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("✅ Costs DB Connected"))
     .catch(err => console.error("❌ DB Connection Error:", err));
 
 // --- Endpoints ---
 
-/**
- * Endpoint: POST /api/add
- * Description: Adds a new cost item to the database.
- * Logic: Accepts cost details. If 'created_at' is not provided,
- * the model defaults to the current timestamp.
- */
+// POST /api/add - Add a new cost
 app.post('/api/add', async (req, res) => {
     try {
         const { description, category, userid, sum, created_at } = req.body;
@@ -63,41 +46,27 @@ app.post('/api/add', async (req, res) => {
     }
 });
 
-/**
- * Endpoint: GET /api/report
- * Description: Retrieves a monthly report for a specific user.
- * Architecture: Implements the 'Computed Pattern' (Caching strategy).
- * * Flow:
- * 1. Check if a report for this specific month/year/user already exists in the 'reports' collection.
- * 2. Cache Hit: Return the existing report immediately (Performance Optimization).
- * 3. Cache Miss: Calculate the report from raw data in the 'costs' collection,
- * save it to 'reports' for future requests, and then return it.
- */
+// GET /api/report - Get monthly report (uses Computed Pattern caching)
 app.get('/api/report', async (req, res) => {
     try {
-        const id = parseInt(req.query.id);
-        const year = parseInt(req.query.year);
-        const month = parseInt(req.query.month);
+        const { id, year, month } = req.query;
+        const userId = parseInt(id);
+        const reportYear = parseInt(year);
+        const reportMonth = parseInt(month);
 
-        // --- Step 1: Check Cache (Optimization) ---
-        const existingReport = await Report.findOne({ userid: id, year, month });
-        if (existingReport) {
-            return res.json(existingReport.costs);
-        }
+        // 1. Try to fetch from cache
+        const existingReport = await Report.findOne({ userid: userId, year: reportYear, month: reportMonth });
+        if (existingReport) return res.json(existingReport.costs);
 
-        // --- Step 2: Calculate Report (If not found in cache) ---
-
-        // Date Calculation: JavaScript months are 0-indexed (0 = January).
-        // We set the range from the 1st of the requested month to the 1st of the NEXT month.
-        const startDate = new Date(year, month - 1, 1);
-        const endDate = new Date(year, month, 1);
+        // 2. If not in cache, calculate from raw costs
+        const startDate = new Date(reportYear, reportMonth - 1, 1);
+        const endDate = new Date(reportYear, reportMonth, 1);
 
         const costs = await Cost.find({
-            userid: id,
+            userid: userId,
             created_at: { $gte: startDate, $lt: endDate }
         });
 
-        // Initialize report structure
         const reportData = { food: [], health: [], housing: [], sports: [], education: [] };
 
         // Group costs by category
@@ -111,16 +80,12 @@ app.get('/api/report', async (req, res) => {
             }
         });
 
-        // --- Step 3: Save to Cache (Only if the month has passed) ---
-        const currentDate = new Date();
-        const currentYear = currentDate.getFullYear();
-        const currentMonth = currentDate.getMonth() + 1; // 1-12
-
-        // Save to database only if the year is less than the current year,
-// or if the year is the same but the month is less than the current month.
-        if (year < currentYear || (year === currentYear && month < currentMonth)) {
-            await new Report({ userid: id, year, month, costs: reportData }).save();
+        // 3. Save to cache only if the month has ended
+        const now = new Date();
+        if (reportYear < now.getFullYear() || (reportYear === now.getFullYear() && reportMonth < now.getMonth() + 1)) {
+            await new Report({ userid: userId, year: reportYear, month: reportMonth, costs: reportData }).save();
         }
+
         res.json(reportData);
     } catch (error) {
         res.status(500).json({ id: 1, message: error.message });
