@@ -30,7 +30,8 @@ async function runTests() {
         const randomId = Math.floor(Math.random() * 100000) + 200000;
 
         try {
-            const userRes = await axios.post('http://127.0.0.1:3001/api/addusers', {
+            // FIX: Changed endpoint from /api/addusers to /api/add
+            const userRes = await axios.post('http://127.0.0.1:3001/api/add', {
                 id: randomId,
                 first_name: "Test",
                 last_name: "User",
@@ -66,11 +67,20 @@ async function runTests() {
         console.log("\n4. Testing Monthly Report (GET /api/report)...");
         const reportRes = await axios.get('http://127.0.0.1:3002/api/report?id=123123&year=2050&month=2');
 
-        // CORRECTION: Since your report is grouped by category, we check the 'food' array
-        if (reportRes.data && reportRes.data.food && reportRes.data.food.length > 0) {
+        // FIX: Adapted check for the new response structure (array of objects inside 'costs')
+        let foundFood = false;
+        if (reportRes.data && Array.isArray(reportRes.data.costs)) {
+            // Find the object that has the 'food' key
+            const foodItem = reportRes.data.costs.find(item => item.food);
+            if (foodItem && foodItem.food.length > 0) {
+                foundFood = true;
+            }
+        }
+
+        if (foundFood) {
             console.log(colors.green + "   [PASS] Report generated successfully." + colors.reset);
         } else {
-            console.log(colors.red + "   [FAIL] Report is empty. Response data: " + JSON.stringify(reportRes.data) + colors.reset);
+            console.log(colors.red + "   [FAIL] Report structure mismatch or empty. Response: " + JSON.stringify(reportRes.data) + colors.reset);
         }
 
         // ---------------------------------------------------------
@@ -83,6 +93,26 @@ async function runTests() {
             console.log(colors.green + "   [PASS] User details fetched correctly with 'total' field." + colors.reset);
         } else {
             console.log(colors.red + "   [FAIL] 'total' field is missing!" + colors.reset);
+        }
+
+        // ---------------------------------------------------------
+        // TEST 6: Invalid Cost Addition (User does not exist)
+        // ---------------------------------------------------------
+        console.log("\n6. Testing Invalid Cost Addition (User does not exist)...");
+        try {
+            await axios.post('http://127.0.0.1:3002/api/add', {
+                description: "Invalid Item",
+                category: "food",
+                userid: 999999, // Non-existent ID
+                sum: 100
+            });
+            console.log(colors.red + "   [FAIL] Server allowed adding cost to non-existent user!" + colors.reset);
+        } catch (error) {
+            if (error.response && error.response.status === 400) {
+                console.log(colors.green + "   [PASS] Server correctly blocked the request." + colors.reset);
+            } else {
+                console.log(colors.red + "   [FAIL] Unexpected error: " + error.message + colors.reset);
+            }
         }
 
         console.log("\n" + colors.green + "=== ALL TESTS COMPLETED SUCCESSFULLY ===" + colors.reset);

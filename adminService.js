@@ -9,7 +9,9 @@ const PORT = process.env.PORT || process.env.PORT_ADMIN || 3004;
 const logger = pino({ level: 'info', transport: { target: 'pino-pretty' } });
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log("✅ Admin DB Connected"))
+    .catch(err => console.error("❌ Admin DB Connection Error:", err));
 
 // Request logging middleware
 app.use(async (req, res, next) => {
