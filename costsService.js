@@ -61,7 +61,7 @@ app.post('/api/add', async (req, res) => {
         // We assume the Users Service is running on localhost:3001.
         try {
             // Making a GET request to the Users Service
-            await axios.get(`http://localhost:3001/api/users/${userid}`);
+            await axios.get(`https://cost-manager-users-gcrb.onrender.com/api/users/${userid}`);
         } catch (err) {
             // If the user service returns 404 or fails, we deny the cost addition
             return res.status(400).json({ id: 1, message: "User does not exist. Cannot add cost." });
