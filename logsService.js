@@ -40,5 +40,9 @@ app.get('/api/logs', async (req, res) => {
     }
 });
 
+app.get('/', (req, res) => {
+    res.send('Logs Service is UP');
+});
+
 // Start the server
 app.listen(PORT, () => console.log(`Logs Service running on port ${PORT}`));

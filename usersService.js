@@ -39,6 +39,14 @@ app.post('/api/add', async (req, res) => {
         // Parse user details from body
         const { id, first_name, last_name, birthday } = req.body;
 
+        if (!id || !first_name || !last_name || !birthday) {
+            return res.status(400).json({ error: "Missing required fields" });
+        }
+
+        if (isNaN(id)) {
+            return res.status(400).json({ error: "ID must be a number" });
+        }
+
         // Create new User document
         const newUser = new User({
             id,
@@ -91,6 +99,10 @@ app.get('/api/users', async (req, res) => {
     // Retrieve all users from DB
     const users = await User.find({});
     res.json(users);
+});
+
+app.get('/', (req, res) => {
+    res.send('Users Service is UP');
 });
 
 // Start the server

@@ -61,5 +61,9 @@ app.get('/api/about', (req, res) => {
     res.json(team);
 });
 
+app.get('/', (req, res) => {
+    res.send('Admin Service is UP');
+});
+
 // Start the server
 app.listen(PORT, () => console.log(`Admin Service running on port ${PORT}`));
