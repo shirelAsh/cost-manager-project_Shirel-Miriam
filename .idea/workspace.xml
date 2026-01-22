@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="315911aa-596f-4a97-91fe-c81323b4e1d1" name="Changes" comment="Added 4 microservices">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminService.js" beforeDir="false" afterPath="$PROJECT_DIR$/adminService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/costsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/costsService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usersService.js" beforeDir="false" afterPath="$PROJECT_DIR$/usersService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,37 +50,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "HTTP Request.test | CHECK 1: Get Specific User Details (PDF Req: Page 5).executor": "Run",
-    "HTTP Request.test | CHECK 2: List All Users (PDF Req: Page 6).executor": "Run",
-    "HTTP Request.test | Test 1: Check Admin Service Health (Port 3004).executor": "Run",
-    "HTTP Request.test | Test 2: Create New User (Port 3001).executor": "Run",
-    "HTTP Request.test | Test 3: Add Cost Item (Port 3002).executor": "Run",
-    "HTTP Request.test | Test 4: Generate Monthly Report (Port 3002).executor": "Run",
-    "HTTP Request.test | Test 5: Fetch System Logs (Port 3003).executor": "Run",
-    "HTTP Request.test | בדיקה 1: האם שרת האדמין עובד?.executor": "Run",
-    "HTTP Request.test | בדיקה 2: הוספת משתמש ראשון (שרת 3001).executor": "Run",
-    "HTTP Request.test | בדיקה 3: הוספת הוצאה (שרת 3002).executor": "Run",
-    "HTTP Request.test | בדיקה 4: קבלת דוח חודשי (שרת 3002).executor": "Run",
-    "HTTP Request.test | בדיקה 5: בדיקת לוגים (שרת 3003).executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/yoeds/WebstormProjects/cost-manager-project_Shirel-Miriam",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.test | CHECK 1: Get Specific User Details (PDF Req: Page 5).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test | CHECK 2: List All Users (PDF Req: Page 6).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test | Test 1: Check Admin Service Health (Port 3004).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test | Test 2: Create New User (Port 3001).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test | Test 3: Add Cost Item (Port 3002).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test | Test 4: Generate Monthly Report (Port 3002).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test | Test 5: Fetch System Logs (Port 3003).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test | בדיקה 1: האם שרת האדמין עובד?.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test | בדיקה 2: הוספת משתמש ראשון (שרת 3001).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test | בדיקה 3: הוספת הוצאה (שרת 3002).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test | בדיקה 4: קבלת דוח חודשי (שרת 3002).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test | בדיקה 5: בדיקת לוגים (שרת 3003).executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yoeds/WebstormProjects/cost-manager-project_Shirel-Miriam&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="HTTP Request.test | CHECK 2: List All Users (PDF Req: Page 6)">
     <configuration name="test | CHECK 1: Get Specific User Details (PDF Req: Page 5)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="CHECK 1: Get Specific User Details (PDF Req: Page 5)" index="6" runType="Run single request">
       <method v="2" />
@@ -126,7 +123,9 @@
       <updated>1768161424776</updated>
       <workItem from="1768161426311" duration="15702000" />
       <workItem from="1768391070756" duration="35000" />
-      <workItem from="1768391107887" duration="4844000" />
+      <workItem from="1768391107887" duration="6634000" />
+      <workItem from="1768744069456" duration="7715000" />
+      <workItem from="1769023075147" duration="1194000" />
     </task>
     <task id="LOCAL‎-00001" summary="Added 4 microservices">
       <option name="closed" value="true" />
